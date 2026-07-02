@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAGRA · QR Codes</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #F6F2EC;
+      color: #111;
+      font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+      padding: 48px 24px;
+    }
+
+    .qr-card {
+      text-align: center;
+      background: #fff;
+      padding: 32px 24px 24px;
+      border: 1px solid #D9D2C6;
+    }
+
+    .qr-card h2 {
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      margin: 0 0 6px;
+    }
+
+    .qr-card p {
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7A7268;
+      margin: 0 0 20px;
+    }
+
+    canvas {
+      display: block;
+      margin: 0 auto;
+      image-rendering: pixelated;
+    }
+
+    .save-hint {
+      font-family: "Hanken Grotesk", system-ui, sans-serif;
+      font-size: 0.68rem;
+      color: #7A7268;
+      margin-top: 14px;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="qr-card">
+    <h2>SAGRA · Landing</h2>
+    <p>QR principal (todas las presentaciones)</p>
+    <canvas id="qr-main" width="400" height="400"></canvas>
+    <div class="save-hint">Click derecho → Guardar imagen</div>
+  </div>
+
+  <div class="qr-card">
+    <h2>Frasco 300 g</h2>
+    <p>sagra-landing/#frasco-300g</p>
+    <canvas id="qr-frasco" width="400" height="400"></canvas>
+    <div class="save-hint">Click derecho → Guardar imagen</div>
+  </div>
+
+  <div class="qr-card">
+    <h2>Pote de Cartón 2 kg</h2>
+    <p>sagra-landing/#pote-2kg</p>
+    <canvas id="qr-pote" width="400" height="400"></canvas>
+    <div class="save-hint">Click derecho → Guardar imagen</div>
+  </div>
+
+  <div class="qr-card">
+    <h2>Gastronómica 9 kg</h2>
+    <p>sagra-landing/#gastronomica-9kg</p>
+    <canvas id="qr-gastro" width="400" height="400"></canvas>
+    <div class="save-hint">Click derecho → Guardar imagen</div>
+  </div>
+
+  <script>
+    const BASE = "https://uidouidi.github.io/sagra-landing/";
+
+    QRCode.toCanvas(document.getElementById("qr-main"), BASE, { width: 400, margin: 1, color: { light: "#ffffff" } });
+    QRCode.toCanvas(document.getElementById("qr-frasco"), BASE + "#frasco-300g", { width: 400, margin: 1, color: { light: "#ffffff" } });
+    QRCode.toCanvas(document.getElementById("qr-pote"), BASE + "#pote-2kg", { width: 400, margin: 1, color: { light: "#ffffff" } });
+    QRCode.toCanvas(document.getElementById("qr-gastro"), BASE + "#gastronomica-9kg", { width: 400, margin: 1, color: { light: "#ffffff" } });
+  </script>
+
+</body>
+
+</html>
