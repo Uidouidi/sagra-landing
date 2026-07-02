@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAGRA - Grasa de Pella Vacuna Fundida</title>
+  <meta name="description" content="SAGRA. Grasa de pella refinada. Volver al alimento real." />
+
+  <!-- ============================================================
+       SAGRA · Landing estática
+       Skill: huashu-design (Brand Asset Protocol + anti-slop)
+       Personalizar: ver comentarios [PERSONALIZAR] en el archivo
+  Deploy: ver DEPLOY.md (GitHub Pages, repo público sagra-landing)
+  Fonts: Bebas Neue (wordmark de marca) + Hanken Grotesk (body)
+  Paleta: monocromo — tinta #111 sobre papel cálido #F6F2EC
+  ESTRATEGIA QR:
+  · 1 QR único → esta página (top)
+  · anchors #frasco-300g, #pote-2kg y #gastronomica-9kg por si querés QRs separados
+  ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Paleta monocromo — single-ink, fiel al manifesto y la etiqueta */
+      --ink: #111111;
+      /* tinta */
+      --paper: #F6F2EC;
+      /* papel cálido */
+      --muted: #7A7268;
+      /* gris cálido para meta/caption */
+      --hairline: #D9D2C6;
+      /* filetes sobre papel */
+      --paper-2: #ECE6DB;
+      /* papel un tono más profundo (placeholders) */
+
+      /* Tipografía: Bebas Neue (marca) + Hanken Grotesk (body) */
+      --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+      --font-body: "Hanken Grotesk", "Source Sans 3", system-ui, sans-serif;
+
+      --maxw: 680px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Antílope typographic hygiene (anti-slop) */
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    p {
+      text-wrap: pretty;
+      margin: 0;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      padding: 28px 0 20px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav .mark {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav .tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ---------- Hero (corto) ---------- */
+    .hero {
+      padding: 56px 0 64px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .hero .wordmark {
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 22vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    img.wordmark {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+    }
+
+    .hero .tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 6vw, 2.4rem);
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .hero .sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* ---------- Labels de sección (small-caps, tono edicto) ---------- */
+    .label {
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    /* ---------- Presentaciones ---------- */
+    .presentaciones {
+      padding: 16px 0 24px;
+    }
+
+    .presentacion {
+      padding: 40px 0;
+      border-top: 1px solid var(--hairline);
+      scroll-margin-top: 24px;
+    }
+
+    .presentacion:first-of-type {
+      border-top: 1px solid var(--ink);
+    }
+
+    .presentacion h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 9vw, 3.4rem);
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+    }
+
+    .presentacion .desc {
+      max-width: 46ch;
+      margin-bottom: 18px;
+    }
+
+    .attrs {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .attrs li {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .attrs li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    /* ---------- Fotos de producto ---------- */
+    /* Las tres presentaciones ya tienen foto real. */
+    .photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--paper-2);
+      border: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .photo .pm {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+    }
+
+    .photo .pc {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Cuando reemplaces el placeholder por <img class="photo">, esta regla la encuadra igual */
+    img.photo {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      background: var(--paper-2);
+      border: 1px solid var(--hairline);
+    }
+
+    /* ---------- Producto (info) ---------- */
+    .producto {
+      padding: 56px 0 48px;
+      border-top: 1px solid var(--ink);
+    }
+
+    .producto h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3rem);
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+
+    .producto p {
+      margin-bottom: 18px;
+      max-width: 52ch;
+    }
+
+    .producto p.muted {
+      color: var(--muted);
+    }
+
+    .pullquote {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      margin: 36px 0;
+      padding: 28px 0;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .facts {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .facts li {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .facts li:last-child {
+      border-bottom: none;
+    }
+
+    .facts .k {
+      flex: 0 0 120px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .facts .v {
+      font-weight: 500;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      padding: 56px 0 64px;
+      border-top: 1px solid var(--ink);
+      margin-top: 40px;
+    }
+
+    footer .mark {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 14vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    footer img.mark {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      display: block;
+      margin-top: 8px;
+    }
+
+    footer .contact {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    footer .ig {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+      font-weight: 500;
+    }
+
+    footer .ig:hover {
+      color: var(--muted);
+      border-color: var(--muted);
+    }
+
+    footer .meta {
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ---------- Desktop tuning ---------- */
+    @media (min-width: 720px) {
+      .presentacion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .presentacion .photo {
+        aspect-ratio: 4 / 5;
+        max-width: 320px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="wrap nav">
+    <!-- PERSONALIZAR: el wordmark ahora usa assets/SAGRA.png. Si preferís volver al texto Bebas Neue, reemplazar el <img> por <h1 class="wordmark">SAGRA</h1> -->
+    <a class="mark" href="#top">SAGRA</a>
+    <span class="tag">Volver al alimento real</span>
+  </header>
+
+  <!-- HERO corto -->
+  <section class="wrap hero" id="top">
+    <img src="assets/SAGRA.png" alt="SAGRA" class="wordmark" />
+    <p class="tagline">Volver al alimento real.</p>
+    <p class="sub">Grasa de Pella Vacuna Fundida.</p>
+  </section>
+
+  <!-- PRESENTACIONES (primero: el usuario viene de una presentación física) -->
+  <section class="wrap presentaciones" id="presentaciones">
+    <span class="label">Un producto. Tres presentaciones.</span>
+
+    <!-- PERSONALIZAR: textos y foto de cada presentación -->
+
+    <article class="presentacion" id="frasco-300g">
+      <div>
+        <h2>Frasco · 300&nbsp;g</h2>
+        <p class="desc">Formato práctico para hogares con consumo moderado.</p>
+        <ul class="attrs">
+          <li>Sin conservantes BHT</li>
+          <li>Grasa de pella refinada</li>
+          <li>Proceso artesanal</li>
+        </ul>
+      </div>
+      <img src="assets/frasco-300g.png" alt="Frasco SAGRA 300 g" class="photo" />
+    </article>
+
+    <article class="presentacion" id="pote-2kg">
+      <div>
+        <h2>Pote de Cartón · 2&nbsp;kg</h2>
+        <p class="desc">Para consumo famiiliar, cocciones abundantes y fritura por inmersión.</p>
+        <ul class="attrs">
+          <li>Sin conservantes BHT</li>
+          <li>Grasa de pella refinada</li>
+          <li>Proceso artesanal</li>
+        </ul>
+      </div>
+      <img src="assets/pote-2kg.png" alt="Pote de cartón SAGRA 2 kg" class="photo" />
+    </article>
+
+    <article class="presentacion" id="gastronomica-9kg">
+      <div>
+        <h2>Gastronómica · 9&nbsp;kg</h2>
+        <p class="desc">Balde de 10&nbsp;L para cocinas profesionales: panaderías, rotiserías, restaurantes.</p>
+        <ul class="attrs">
+          <li>Sin conservantes BHT</li>
+          <li>Grasa de pella refinada</li>
+          <li>Proceso artesanal</li>
+        </ul>
+      </div>
+      <img src="assets/gastronomica-9kg.jpg" alt="Balde gastronómico SAGRA 9 kg" class="photo" />
+    </article>
+  </section>
+
+  <!-- PRODUCTO (info) -->
+  <section class="wrap producto" id="producto">
+    <span class="label">El producto</span>
+    <h2>Grasa de pella, nada más.</h2>
+    <p>La grasa animal fue, desde siempre, pilar de la alimentación humana. Los intereses de la industria alimentaria
+      generaron confusión y la demonizaron.</p>
+    </p>Hoy, SAGRA la devuelve a su lugar: un alimento noble, simple, verdadero.</p>
+
+    <p class="pullquote">Volver al alimento real.</p>
+
+    <ul class="facts">
+      <li><span class="k">Ingredientes</span><span class="v">Grasa de pella vacuna</span></li>
+      <li><span class="k">Conservantes</span><span class="v">No posee. Sin BHT, sin aditivos</span></li>
+      <li><span class="k">Proceso</span><span class="v">Fundida en ollas de acero inoxidable AISI 304 y envasada</span>
+      </li>
+      <li><span class="k">Origen</span><span class="v">CABA, Argentina</span></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wrap">
+    <img src="assets/SAGRA.png" alt="SAGRA" class="mark" />
+    <p class="contact">Grasa de pella refinada.</p>
+    <!-- PERSONALIZAR: reemplazar href con el Instagram real de SAGRA -->
+    <p><a class="ig" href="https://instagram.com/sagraalimento" target="_blank" rel="noopener">@SAGRA en IG</a>
+    </p>
+    <p class="meta">Hecho en Argentina</p>
+  </footer>
+
+</body>
+
+</html>
